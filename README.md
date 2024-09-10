@@ -1,0 +1,1 @@
+sh run-macos-m2.sh
