@@ -1,0 +1,25 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: grafana/grafana
+  tag: 9.1.8
+
+port: 3000
+nodePort: 30011
+
+ingress:
+  enabled: true
+  name: grafana
+  domain: echo-server
+
+prometheusService: prometheus
+
+dashboards:
+  - spring-boot
+
+resources:
+  requests:
+    cpu: 500m
+    memory: 1024Mi
+  limits:
+    cpu: 500m
+    memory: 1024Mi

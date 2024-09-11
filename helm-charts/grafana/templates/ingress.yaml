@@ -6,15 +6,10 @@ metadata:
     app.kubernetes.io/name: {{ .Chart.Name }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
-    app.kubernetes.io/component: application
+    app.kubernetes.io/component: monitoring
     app.kubernetes.io/managed-by: helm
 spec:
   ingressClassName: nginx
-  defaultBackend:
-    service:
-      name: {{ .Release.Name }}
-      port:
-        number: {{ .Values.port }}
   rules:
     - host: {{ .Release.Name }}
       http:
