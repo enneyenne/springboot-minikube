@@ -1,1 +1,1 @@
-sh run-macos-m2.sh
+sh run-minikube-macos-m2.sh

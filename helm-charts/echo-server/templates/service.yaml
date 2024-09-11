@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ .Release.Name }}-svc
   labels:
     app.kubernetes.io/name: {{ .Chart.Name }}
     app.kubernetes.io/instance: {{ .Release.Name }}
@@ -10,7 +10,7 @@ metadata:
     app.kubernetes.io/managed-by: helm
 spec:
   selector:
-    app: {{ .Release.Name }}
+    app: {{ .Release.Name }}-svc
   ports:
     - name: {{ .Chart.Name }}-app
       protocol: TCP
