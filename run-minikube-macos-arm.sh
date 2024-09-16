@@ -7,7 +7,7 @@ brew install minikube
 echo "Installing helm..."
 brew install helm
 
-echo "Opening docker..."
+echo "Starting docker..."
 open -a docker
 
 echo "Starting minikube..."
@@ -20,7 +20,7 @@ minikube addons enable ingress-dns
 echo "Waiting up ingress..."
 sleep 30
 
-echo "Installing echo-server..."
+echo "Installing helm-charts..."
 helm install echo-server helm-charts/echo-server
 helm install grafana helm-charts/grafana
 helm install prometheus helm-charts/prometheus
